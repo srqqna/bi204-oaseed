@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OASEED – บริการพ่นหญ้า Hydroseeding สำหรับบ้านและพื้นที่ลาดชัน</title>
+<meta name="description" content="OASEED Hydroseeding & Eco-Mulch Solution บริการพ่นเมล็ดหญ้าพร้อมวัสดุคลุมดิน สำหรับบ้านเดี่ยว รีสอร์ท คาเฟ่ และพื้นที่ลาดชัน">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --forest:#173F31; --moss:#2E5E47; --lime:#8CC63F; --mulch:#5FC3A8;
+  --paper:#F3F6EF; --ink:#12261E; --line:rgba(255,255,255,.16); --muted:#C4D6CB;
+  --r:20px; --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;font-family:'Prompt',system-ui,sans-serif;font-weight:400;color:var(--ink);background:var(--paper);line-height:1.7;font-size:17px;}
+.w{white-space:nowrap}
+h1,h2,h3{text-wrap:balance}
+p,li,figcaption,.why-card .prob,.c-list span{text-wrap:pretty}
+.nw{white-space:nowrap}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{line-height:1.25;margin:0;font-weight:600}
+h2{font-size:clamp(30px,3.6vw,44px);letter-spacing:-.01em}
+h3{font-size:20px}
+.lead-p{margin-top:16px;font-size:18px;font-weight:300;max-width:52ch}
+p{margin:0}
+.btn{display:inline-flex;align-items:center;gap:0;white-space:nowrap;min-height:48px;padding:0 26px;border-radius:999px;font:600 16px 'Prompt',sans-serif;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn-lime{background:var(--lime);color:var(--ink)}
+.btn-lime:hover{background:#9fd451}
+.btn-ghost{border-color:rgba(255,255,255,.6);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+/* nav */
+header{position:absolute;inset:0 0 auto 0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+.nav img{height:42px;width:auto}
+.nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+.nav ul a{color:#fff;text-decoration:none;font-size:15px;opacity:.9}
+.nav ul a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--lime)}
+.nav .btn{min-height:42px;padding:0 20px;font-size:15px}
+.menu-btn{display:none;background:none;border:0;color:#fff;width:44px;height:44px;cursor:pointer}
+
+/* hero */
+.hero{position:relative;min-height:min(92vh,820px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--forest)}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,63,49,.94) 0%,rgba(23,63,49,.75) 38%,rgba(23,63,49,.1) 70%),linear-gradient(0deg,rgba(23,63,49,.85),rgba(23,63,49,0) 40%)}
+.hero .wrap{position:relative;z-index:1;padding-top:130px;padding-bottom:72px;width:100%}
+.hero-kicker{font-size:17px;color:var(--mulch);font-weight:500;margin-bottom:14px}
+.hero h1{font-size:clamp(44px,7vw,92px);font-weight:700;letter-spacing:-.02em;max-width:11ch;line-height:1.08}
+.hero h1 .spray{display:block;color:var(--mulch)}
+.hero p.lead{margin-top:22px;max-width:46ch;font-size:19px;font-weight:300;color:#E4EEE8}
+.hero .actions{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+.hero-facts{display:flex;gap:36px;flex-wrap:wrap;margin-top:56px;padding-top:24px;border-top:1px solid var(--line);max-width:760px}
+.hero-facts div{font-size:15px;color:var(--muted)}
+.hero-facts strong{display:block;color:#fff;font-size:20px;font-weight:600}
+
+/* sections */
+section{padding:110px 0}
+.dark{background:var(--forest);color:#fff}
+.dark p{color:#D6E4DC}
+.sec-head{max-width:780px;margin-bottom:52px}
+.sec-head p{margin-top:16px;font-size:18px;font-weight:300}
+
+/* about */
+.about{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.about-img{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about .points{margin-top:34px;display:grid;gap:22px}
+.point{display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start}
+.point .ic{width:48px;height:48px;border-radius:50%;background:var(--forest);display:grid;place-items:center}
+.point h3{font-size:18px;font-weight:600;margin-bottom:2px}
+.point p{color:#3D5A4C;font-size:16px;font-weight:300}
+
+/* what is */
+.what{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.mix{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:36px}
+.mix div{border:1px solid var(--line);border-radius:16px;padding:20px 10px 16px;text-align:center;font-size:15px;font-weight:500;line-height:1.4;display:flex;flex-direction:column;align-items:center;gap:10px;color:#fff}
+.mix svg{display:block;flex:none}
+.steps{list-style:none;padding:0;margin:40px 0 0;display:grid;gap:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:18px;padding:18px 0;border-top:1px solid var(--line);font-size:16px;font-weight:300;line-height:1.65;color:#D6E4DC}
+.steps li::before{content:counter(s);width:40px;height:40px;border-radius:50%;background:var(--lime);color:var(--ink);font-weight:700;display:grid;place-items:center}
+.steps strong{color:#fff;display:block;font-size:18px;font-weight:600;margin-bottom:2px}
+.ba{position:relative}
+.ba img{width:100%}
+.ba figcaption{display:grid;grid-template-columns:1fr 1fr;text-align:center;margin-top:14px;font-size:15px;font-weight:500;color:var(--muted)}
+
+/* why */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.why-card{background:#fff;border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.why-card .prob{background:#E3EADF;padding:22px 26px;font-size:15px;color:#4A6556}
+.why-card .prob b{display:block;color:var(--ink);font-size:17px;margin-bottom:4px}
+.why-card .sol{padding:24px 26px 30px}
+.why-card .sol h3{margin-bottom:8px;color:var(--forest)}
+.why-card .sol p{color:#3D5A4C;font-size:16px;font-weight:300}
+.tag{display:inline-block;font-size:13px;font-weight:600;padding:3px 12px;border-radius:999px;margin-bottom:10px}
+.tag.p{background:#fff;color:#7A5A2E}
+.tag.s{background:var(--lime);color:var(--ink)}
+
+/* packages */
+.pk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.pk{border:1px solid var(--line);border-radius:var(--r);padding:34px 30px;display:flex;flex-direction:column;background:rgba(255,255,255,.04)}
+.pk.feature{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.pk.feature p,.pk.feature li{color:#3D5A4C}
+.pk .size{font-size:15px;color:var(--muted)}
+.pk.feature .size{color:#4A6556}
+.pk .price{font-size:54px;font-weight:700;line-height:1;margin:24px 0 4px}
+.pk .price small{font-size:17px;font-weight:500}
+.pk ul{list-style:none;padding:0;margin:24px 0;display:grid;gap:10px;flex:1}
+.pk li{position:relative;padding-left:30px;font-size:16px;color:#D6E4DC}
+.pk li::before{content:"";position:absolute;left:0;top:5px;width:18px;height:18px;border-radius:50%;background:var(--lime) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2312261E' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/12px no-repeat}
+.pk .fit{font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+.pk.feature .fit{border-color:#CCD8C8}
+.pk .badge{align-self:flex-start;background:var(--lime);color:var(--ink);font-size:13px;font-weight:600;padding:3px 12px;border-radius:999px;margin-bottom:14px}
+
+/* works */
+.works{display:grid;grid-template-columns:1.6fr 1fr 1fr;grid-template-rows:260px 260px;gap:16px}
+.works figure:last-child{grid-column:span 2}
+.works figure{margin:0;position:relative;border-radius:16px;overflow:hidden}
+.works figure:first-child{grid-row:span 2}
+.works img{width:100%;height:100%;object-fit:cover}
+.works figcaption{position:absolute;left:14px;bottom:14px;background:rgba(23,63,49,.85);color:#fff;font-size:14px;padding:5px 14px;border-radius:999px}
+
+/* promo */
+.promo{background:var(--lime);padding:64px 0}
+.promo .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;align-items:center}
+.promo h2{font-size:clamp(28px,3vw,38px)}
+.promo h3{font-size:18px}
+.promo p{font-size:16px;color:#26412F}
+
+/* contact */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px}
+.c-list{margin-top:34px;display:grid;gap:18px}
+.c-list div{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center}
+.c-list .ic{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.08);display:grid;place-items:center}
+.areas{margin-top:40px}
+.areas h3{font-size:17px;margin-bottom:12px}
+.areas ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.areas li{border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:15px}
+form{background:var(--paper);color:var(--ink);border-radius:var(--r);padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+form h3{grid-column:1/-1;font-size:24px}
+.f{display:grid;gap:6px}
+.f.full{grid-column:1/-1}
+label{font-size:15px;font-weight:500}
+input,select,textarea{font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid #B9CBBE;border-radius:12px;background:#fff;color:var(--ink);min-height:48px;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px rgba(140,198,63,.45)}
+textarea{min-height:110px;resize:vertical}
+.hint{font-size:13px;color:#5A7365}
+form .btn{grid-column:1/-1;justify-content:center;background:var(--forest);color:#fff}
+form .btn:hover{background:var(--moss)}
+.sent{grid-column:1/-1;background:#E3F1D2;border-radius:12px;padding:14px 16px;font-size:15px;display:none}
+.sent.show{display:block}
+
+footer{background:var(--ink);color:#B5C7BC;padding:48px 0 32px;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+footer img{height:36px;width:auto}
+footer nav{display:flex;gap:22px;flex-wrap:wrap}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+
+
+/* ===== motion ===== */
+/* grass progress bar */
+.grow{position:fixed;left:0;top:0;height:4px;width:100%;z-index:50;pointer-events:none}
+.grow i{display:block;height:100%;width:calc(var(--p,0)*100%);background:linear-gradient(90deg,var(--mulch),var(--lime));border-radius:0 4px 4px 0}
+.grow{overflow:hidden;height:22px}
+.grow i{height:4px}
+.grow svg{position:absolute;top:-1px;left:min(calc(var(--p,0)*100% - 11px),calc(100% - 22px));transition:transform .2s}
+/* reveal types */
+.js [data-a]{opacity:0;transition:opacity .7s ease,transform 1s cubic-bezier(.2,.8,.2,1),filter .8s ease;transition-delay:var(--d,0s);will-change:transform}
+.js [data-a="up"]{transform:translateY(48px)}
+.js [data-a="left"]{transform:translateX(-80px)}
+.js [data-a="right"]{transform:translateX(80px)}
+.js [data-a="pop"]{transform:scale(.6);transition-timing-function:ease,cubic-bezier(.34,1.7,.5,1)}
+.js [data-a="flip"]{transform:perspective(900px) rotateX(35deg) translateY(60px);transform-origin:50% 100%}
+.js [data-a="blur"]{filter:blur(14px);transform:scale(1.08)}
+.js [data-a].in{opacity:1;transform:none;filter:none}
+/* image curtain + inner parallax */
+.js .curtain>img{clip-path:inset(0 100% 0 0);transition:clip-path 1.2s cubic-bezier(.7,0,.2,1);transition-delay:var(--d,0s)}
+.js .curtain.in>img{clip-path:inset(0 0 0 0)}
+.js .curtain>figcaption{opacity:0;transform:translateY(10px);transition:opacity .5s,transform .5s;transition-delay:calc(var(--d,0s) + .9s)}
+.js .curtain.in>figcaption{opacity:1;transform:none}
+.works figure img{transform:translateY(var(--py,0px)) scale(1.18);will-change:transform}
+/* hero parallax */
+.hero img.bg{transform:translateY(var(--hy,0px)) scale(var(--hs,1.12));transition:none}
+.hero .wrap{transform:translateY(var(--ty,0px));opacity:var(--to,1)}
+/* steps: line that grows with scroll */
+.steps{position:relative}
+.steps::before{content:"";position:absolute;left:19px;top:38px;width:2px;height:calc((100% - 76px)*var(--sp,0));background:var(--lime);border-radius:2px}
+.steps li::before{position:relative;z-index:1;transition:transform .5s cubic-bezier(.34,1.7,.5,1),background .3s}
+.steps li:not(.lit)::before{background:var(--forest);color:var(--lime);box-shadow:inset 0 0 0 2px var(--lime);transform:scale(.85)}
+/* before/after: scroll-driven swing */
+.ba img{transform:rotate(var(--br,0deg)) scale(var(--bs,1));transition:transform .1s linear}
+/* marquee */
+.marquee{background:var(--forest);overflow:hidden;padding:30px 0;border-top:1px solid var(--line)}
+.marquee .row{display:flex;gap:48px;white-space:nowrap;transform:translateX(var(--mx,0px));will-change:transform}
+.marquee span{font-size:clamp(44px,7vw,96px);font-weight:700;line-height:1.1;color:transparent;-webkit-text-stroke:1.5px rgba(140,198,63,.65)}
+.marquee span.f{color:var(--lime);-webkit-text-stroke:0}
+.marquee svg{flex:none;align-self:center}
+/* price counter */
+.price .num{display:inline-block;min-width:2ch}
+@media (prefers-reduced-motion:reduce){
+  .js [data-a],.js .curtain>img{transform:none!important;filter:none!important;clip-path:none!important;transition:opacity .9s ease!important;transition-delay:var(--d,0s)!important}
+  .js .curtain>img{opacity:0}.js .curtain.in>img{opacity:1}
+  .hero img.bg,.hero .wrap,.works figure img,.ba img,.marquee .row{transform:none!important;opacity:1!important}
+  .steps li::before{transform:none!important}
+}
+
+
+/* ---- mobile ---- */
+html{-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+main>section,.marquee{overflow-x:clip}
+body{-webkit-tap-highlight-color:rgba(140,198,63,.25)}
+.ba picture{display:block}
+.fab{display:none}
+@media (max-width:960px){
+  .works figure img{transform:scale(1.04)!important}
+  .ba img{transform:none!important}
+}
+@media (max-width:640px){
+  body{padding-bottom:76px}
+  .wrap{padding:0 20px}
+  section{padding:68px 0}
+  .sec-head{margin-bottom:32px}
+  h2{font-size:30px}
+  .hero{min-height:100svh}
+  .hero .wrap{padding-top:110px;padding-bottom:40px}
+  .hero h1{font-size:46px}
+  .hero p.lead{font-size:17px}
+  .hero .actions{flex-direction:column;align-items:stretch}
+  .hero .actions .btn{justify-content:center}
+  .hero-kicker{font-size:14px;white-space:nowrap}
+  .hero-facts{display:grid;grid-template-columns:1fr;gap:12px;margin-top:32px;padding-top:20px}
+  .hero-facts div{font-size:13px}
+  .hero-facts strong{display:inline;font-size:16px;white-space:nowrap;margin-right:8px}
+  .about{gap:32px}
+  .about-img{aspect-ratio:4/3}
+  .mix{gap:10px;margin-top:28px}
+  .steps li{grid-template-columns:40px 1fr;gap:14px}
+  .why-grid,.pk-grid{gap:18px}
+  .why-card .prob,.why-card .sol{padding-left:20px;padding-right:20px}
+  .pk{padding:26px 22px}
+  .pk .price{font-size:46px;margin-top:18px}
+  .pk .price .num{min-width:0}
+  .works{gap:10px}
+  .js [data-a="left"],.js [data-a="right"]{transform:translateY(40px)}
+  .marquee{padding:18px 0}
+  .marquee span{font-size:40px}
+  .marquee svg{width:36px;height:36px}
+  .promo{padding:48px 0}
+  .contact{gap:36px}
+  form{padding:22px 18px;gap:14px}
+  footer{padding:36px 0 28px}
+  footer .wrap{flex-direction:column;align-items:flex-start;gap:16px}
+  .fab{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;justify-content:center;min-height:52px;box-shadow:0 8px 24px rgba(18,38,30,.35);transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .35s}
+  .fab.hide{transform:translateY(90px);opacity:0;pointer-events:none}
+  .nav.open ul{top:76px}
+  .nav.open ul a{display:block;padding:8px 0;font-size:17px}
+}
+
+/* responsive */
+@media (max-width:960px){
+  .about,.what,.contact{grid-template-columns:1fr;gap:44px}
+  .about-img{aspect-ratio:16/10}
+  .why-grid,.pk-grid{grid-template-columns:1fr}
+  .works{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .works figure{aspect-ratio:4/3}
+  .works figure:first-child,.works figure:last-child{grid-column:1/-1;grid-row:auto;aspect-ratio:16/9}
+  .promo .wrap{grid-template-columns:1fr;gap:24px}
+  .nav ul,.nav .btn{display:none}
+  .menu-btn{display:grid;place-items:center}
+  .nav.open ul{display:flex;flex-direction:column;position:absolute;top:84px;left:16px;right:16px;background:var(--forest);padding:20px 24px;border-radius:16px;gap:16px}
+  section{padding:80px 0}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .mix{grid-template-columns:1fr 1fr}
+  form{grid-template-columns:1fr;padding:24px}
+  .hero-facts{gap:20px}
+}
+</style>
+</head>
+<body>
+
+<div class="grow" aria-hidden="true"><i></i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8CC63F" stroke-width="2.2" stroke-linecap="round"><path d="M12 21v-8"/><path d="M12 13c0-4-3-6-7-6 0 4 3 6 7 6z" fill="#8CC63F"/><path d="M12 13c0-4 3-7 7-7 0 4-3 7-7 7z" fill="#5FC3A8" stroke="#5FC3A8"/></svg></div>
+<header>
+  <div class="wrap nav" id="nav">
+    <a href="#top" aria-label="OASEED หน้าแรก"><img src="assets/logo.png" alt="OASEED" width="386" height="168"></a>
+    <ul>
+      <li><a href="#about"><span class="w">เกี่ยวกับ</span>​<span class="w">เรา</span></a></li>
+      <li><a href="#hydroseeding">Hydroseeding <span class="w">คือ</span>​<span class="w">อะไร</span></a></li>
+      <li><a href="#packages"><span class="w">แพ็กเกจ</span>​<span class="w">และ</span>​<span class="w">ราคา</span></a></li>
+      <li><a href="#works"><span class="w">ผลงาน</span></a></li>
+      <li><a href="#contact"><span class="w">ติดต่อ</span></a></li>
+    </ul>
+    <a class="btn btn-lime" href="#contact"><span class="w">ขอ</span>​<span class="w">ประเมินราคา</span></a>
+    <button class="menu-btn" aria-label="เปิดเมนู" aria-expanded="false" aria-controls="nav">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="แนะนำ OASEED">
+    <img class="bg" src="assets/hero-slope.jpg" srcset="assets/hero-slope-m.jpg 900w, assets/hero-slope.jpg 1800w" sizes="100vw" fetchpriority="high" alt="รถพ่นหญ้า OASEED กำลังพ่นเมล็ดหญ้าลงบนเนินดินลาดชัน">
+    <div class="wrap">
+      <p class="hero-kicker">Hydroseeding & Eco-Mulch Solution</p>
+      <h1><span class="w">เนิน</span>​<span class="w">ชัน</span>​<span class="w">แค่</span>​<span class="w">ไหน</span> <span class="spray"><span class="w">ก็</span>​<span class="w">เขียว</span>​<span class="w">ได้</span></span></h1>
+      <p class="lead"><span class="w">บริการ</span>​<span class="w">พ่น</span>​<span class="w">เมล็ด</span>​<span class="w">หญ้า</span>​<span class="w">พร้อม</span>​<span class="w">วัสดุ</span>​<span class="w">คลุม</span>​<span class="w">ดิน</span> <span class="w">สำหรับ</span>​<span class="w">บ้านเดี่ยว</span> <span class="w">รีสอร์ท</span> <span class="w">คาเฟ่</span> <span class="w">และ</span>​<span class="w">พื้นที่</span>​<span class="w">ลาดชัน</span>​<span class="w">ที่</span>​<span class="w">ปู</span>​<span class="w">หญ้า</span>​<span class="w">แผ่น</span>​<span class="w">แล้ว</span>​<span class="w">ไม่</span>​<span class="w">รอด</span></p>
+      <div class="actions">
+        <a class="btn btn-lime" href="#contact"><span class="w">ส่ง</span>​<span class="w">รูปหน้า</span>​<span class="w">งาน</span>​<span class="w">เพื่อ</span>​<span class="w">ประเมินราคา</span></a>
+        <a class="btn btn-ghost" href="#hydroseeding"><span class="w">ดู</span>​<span class="w">ว่า</span>​<span class="w">ทำงาน</span>​<span class="w">อย่างไร</span></a>
+      </div>
+      <div class="hero-facts">
+        <div><strong><span class="w">เริ่ม</span> 38 <span class="w">บาท/</span>​<span class="w">ตร.</span>​<span class="w">ม.</span></strong><span class="w">สำหรับ</span>​<span class="w">พื้นที่</span> 600 <span class="w">ตร.</span>​<span class="w">ม.</span> <span class="w">ขึ้นไป</span></div>
+        <div><strong><span class="w">รับประกัน</span>​<span class="w">การ</span>​<span class="w">งอก</span> 30 <span class="w">วัน</span></strong><span class="w">ใน</span>​<span class="w">แพ็กเกจ</span> Starter Lawn</div>
+        <div><strong><span class="w">ทีม</span>​<span class="w">พ่น</span>​<span class="w">เคลื่อนที่</span></strong><span class="w">เข้าถึง</span>​<span class="w">หน้า</span>​<span class="w">งาน</span>​<span class="w">ได้</span>​<span class="w">ทุก</span>​<span class="w">พื้นที่</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <div class="sec-head" style="margin-bottom:0">
+          <h2><span class="w">เรา</span>​<span class="w">คือ</span> OASEED</h2>
+          <p><span class="w">ผู้ให้บริการ</span>​<span class="w">ด้าน</span>​<span class="w">งาน</span>​<span class="w">พ่น</span>​<span class="w">เมล็ดพันธุ์</span>​<span class="w">หญ้า</span>​<span class="w">และ</span>​<span class="w">งาน</span>​<span class="w">จัดการ</span>​<span class="w">สิ่งแวดล้อม</span>​<span class="w">แบบ</span>​<span class="w">ครบวงจร</span> <span class="w">ตั้งแต่</span>​<span class="w">สนามหญ้า</span>​<span class="w">หน้าบ้าน</span> <span class="w">ไป</span>​<span class="w">จนถึง</span>​<span class="w">งาน</span>​<span class="w">ป้องกัน</span>​<span class="w">หน้า</span>​<span class="w">ดิน</span>​<span class="w">พังทลาย</span>​<span class="w">บน</span>​<span class="w">พื้นที่</span>​<span class="w">ลาดชัน</span></p>
+        </div>
+        <div class="points">
+          <div class="point">
+            <span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8CC63F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span>
+            <div><h3><span class="w">สนามหญ้า</span>​<span class="w">ใน</span>​<span class="w">พื้น</span>​<span class="w">ที่พักอาศัย</span></h3><p><span class="w">จัด</span>​<span class="w">สวน</span>​<span class="w">และ</span>​<span class="w">สนามหญ้า</span>​<span class="w">สำหรับ</span>​<span class="w">บ้านเดี่ยว</span>​<span class="w">พื้นที่</span>​<span class="w">กว้าง</span> <span class="w">รีสอร์ท</span> <span class="w">และ</span>​<span class="w">คาเฟ่</span></p></div>
+          </div>
+          <div class="point">
+            <span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8CC63F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l7-12 4 6 3-4 4 10z"/></svg></span>
+            <div><h3><span class="w">งาน</span>​<span class="w">เสริม</span>​<span class="w">ความมั่นคง</span>​<span class="w">พื้นที่</span>​<span class="w">ลาดชัน</span></h3><p><span class="w">ป้องกัน</span>​<span class="w">การ</span>​<span class="w">พังทลาย</span>​<span class="w">ของ</span>​<span class="w">หน้า</span>​<span class="w">ดิน</span> <span class="w">สำหรับ</span>​<span class="w">โครงการ</span>​<span class="w">เชิงพาณิชย์</span>​<span class="w">และ</span>​<span class="w">นิคมอุตสาหกรรม</span></p></div>
+          </div>
+          <div class="point">
+            <span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8CC63F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg></span>
+            <div><h3><span class="w">วัสดุ</span>​<span class="w">พรีเมียม</span> <span class="w">เครื่องจักร</span>​<span class="w">ทันสมัย</span></h3><p><span class="w">ทีม</span>​<span class="w">ผู้เชี่ยวชาญ</span> <span class="w">คัดสรร</span>​<span class="w">วัสดุ</span>​<span class="w">เกรด</span>​<span class="w">พรีเมียม</span> <span class="w">เพื่อ</span>​<span class="w">ผลลัพธ์</span>​<span class="w">ที่</span>​<span class="w">ดี</span>​<span class="w">ที่สุด</span>​<span class="w">ใน</span>​<span class="w">ทุก</span>​<span class="w">โครงการ</span></p></div>
+          </div>
+        </div>
+      </div>
+      <div class="about-img"><img src="assets/truck-home.jpg" srcset="assets/truck-home-m.jpg 900w, assets/truck-home.jpg 1800w" sizes="(max-width:960px) 100vw, 45vw" alt="พนักงาน OASEED พ่นหญ้าหน้าบ้านเดี่ยวสมัยใหม่" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section id="hydroseeding" class="dark">
+    <div class="wrap what">
+      <div>
+        <h2>Hydroseeding <span class="w">คือ</span>​<span class="w">อะไร</span></h2>
+        <p class="lead-p"><span class="w">การ</span>​<span class="w">เพาะ</span>​<span class="w">เมล็ด</span>​<span class="w">แบบ</span>​<span class="w">ใหม่</span> <span class="w">ผสม</span>​<span class="w">เมล็ด</span>​<span class="w">หญ้า</span>​<span class="w">กับ</span>​<span class="w">วัสดุ</span>​<span class="w">อื่น</span>​<span class="w">ใน</span>​<span class="w">ถัง</span>​<span class="w">ไฮดรอลิก</span> <span class="w">ให้</span>​<span class="w">เป็น</span>​<span class="w">สารละลาย</span>​<span class="w">ที่</span>​<span class="w">กระจาย</span>​<span class="w">ตัว</span>​<span class="w">สม่ำเสมอ</span> <span class="w">แล้ว</span>​<span class="w">พ่น</span>​<span class="w">ลง</span>​<span class="w">พื้นที่</span>​<span class="w">ด้วย</span>​<span class="w">ปั๊ม</span>​<span class="w">แรงดัน</span>​<span class="w">สูง</span></p>
+        <div class="mix" aria-label="ส่วนผสมหลัก 4 ชนิด">
+          <div><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#5FC3A8" stroke-width="2" aria-hidden="true"><path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/></svg><span><span class="w">น้ำ</span></span></div>
+          <div><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#5FC3A8" stroke-width="2" aria-hidden="true"><path d="M4 20c0-9 7-15 16-16-1 9-7 16-16 16z"/><path d="M4 20l8-8"/></svg><span><span class="w">วัสดุ</span>​<span class="w">คลุม</span>​<span class="w">ดิน</span><br><span class="w">อินทรีย์</span></span></div>
+          <div><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#5FC3A8" stroke-width="2" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/></svg><span><span class="w">เมล็ดพันธุ์</span></span></div>
+          <div><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#5FC3A8" stroke-width="2" aria-hidden="true"><path d="M9 3h6M10 3v6L5 19a1.5 1.5 0 0 0 1.3 2h11.4A1.5 1.5 0 0 0 19 19l-5-10V3"/></svg><span><span class="w">ปุ๋ย</span></span></div>
+        </div>
+        <ol class="steps">
+          <li><div><strong><span class="w">ผสม</span>​<span class="w">ใน</span>​<span class="w">ถัง</span>​<span class="w">เดียว</span></strong><span class="w">เมล็ดพันธุ์</span>​<span class="w">คัด</span>​<span class="w">พิเศษ</span> <span class="w">ปุ๋ย</span>​<span class="w">เร่ง</span>​<span class="w">ราก</span> <span class="w">สาร</span>​<span class="w">ยึด</span>​<span class="w">เกาะ</span> (Tackifier) <span class="w">และ</span>​<span class="w">เส้นใย</span>​<span class="w">คลุม</span>​<span class="w">ดิน</span> (Mulch)</div></li>
+          <li><div><strong><span class="w">พ่น</span>​<span class="w">ด้วย</span>​<span class="w">แรงดัน</span>​<span class="w">สูง</span></strong><span class="w">เคลือบ</span>​<span class="w">ผิวหน้า</span>​<span class="w">ดิน</span>​<span class="w">เรียบ</span>​<span class="w">เนียน</span>​<span class="w">สม่ำเสมอ</span> <span class="w">ไม่</span>​<span class="w">มี</span>​<span class="w">รอยต่อ</span> <span class="nw"><span class="w">ถึง</span>​<span class="w">จุด</span>​<span class="w">ที่</span>​<span class="w">เข้าถึง</span>​<span class="w">ยาก</span></span></div></li>
+          <li><div><strong><span class="w">หญ้า</span>​<span class="w">งอก</span>​<span class="w">และ</span>​<span class="w">ยึด</span>​<span class="w">ดิน</span></strong><span class="w">ราก</span>​<span class="w">หยั่งลึก</span> <span class="w">ยึด</span>​<span class="w">เกาะ</span>​<span class="w">หน้า</span>​<span class="w">ดิน</span>​<span class="w">แน่น</span>​<span class="w">กว่า</span>​<span class="w">หญ้า</span>​<span class="w">แผ่น</span></div></li>
+        </ol>
+      </div>
+      <figure class="ba" style="margin:0">
+        <picture><source srcset="assets/before-after.webp" type="image/webp"><img src="assets/before-after.png" width="705" height="490" alt="ภาพเปรียบเทียบ หน้าดินที่พ่นวัสดุคลุมดินสีเขียว กับสนามหญ้าที่งอกเต็มแล้ว" loading="lazy"></picture>
+        <figcaption><span><span class="w">หลัง</span>​<span class="w">พ่น</span></span><span><span class="w">เมื่อ</span>​<span class="w">หญ้า</span>​<span class="w">งอก</span>​<span class="w">เต็ม</span></span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="w">ปัญหา</span>​<span class="w">เดิม</span>​<span class="w">ของ</span>​<span class="w">การ</span>​<span class="w">ปลูก</span>​<span class="w">หญ้า</span> <span class="w">ที่</span>​<span class="w">เรา</span>​<span class="w">แก้</span>​<span class="w">ให้</span></h2>
+      </div>
+      <div class="why-grid">
+        <article class="why-card">
+          <div class="prob"><span class="tag p"><span class="w">ปัญหา</span></span><b><span class="w">ข้อจำกัด</span>​<span class="w">ด้าน</span>​<span class="w">เวลา</span>​<span class="w">และ</span>​<span class="w">แรงงาน</span></b><span class="w">อยาก</span>​<span class="w">ปิดงาน</span>​<span class="w">ไว</span>​<span class="w">ใน</span>​<span class="w">พื้นที่</span>​<span class="w">ใหญ่</span> <span class="w">แต่</span>​<span class="w">การ</span>​<span class="w">ปลูก</span>​<span class="w">แบบ</span>​<span class="w">เดิม</span>​<span class="w">ช้า</span>​<span class="w">และ</span>​<span class="w">คุม</span>​<span class="w">คุณภาพ</span>​<span class="w">ยาก</span></div>
+          <div class="sol"><span class="tag s">OASEED</span><h3><span class="w">พ่น</span>​<span class="w">เสร็จ</span>​<span class="w">ใน</span>​<span class="w">รอบ</span>​<span class="w">เดียว</span></h3><p><span class="w">ผสม</span>​<span class="w">ทุกอย่าง</span>​<span class="w">ใน</span>​<span class="w">ถัง</span>​<span class="w">เดียว</span>​<span class="w">แล้ว</span>​<span class="w">พ่น</span>​<span class="w">ด้วย</span>​<span class="w">เครื่อง</span>​<span class="w">แรงดัน</span>​<span class="w">สูง</span> <span class="w">ใช้</span>​<span class="w">แรงงาน</span>​<span class="w">น้อยกว่า</span>​<span class="w">การ</span>​<span class="w">ปู</span>​<span class="w">หญ้า</span>​<span class="w">แผ่น</span></p></div>
+        </article>
+        <article class="why-card">
+          <div class="prob"><span class="tag p"><span class="w">ปัญหา</span></span><b><span class="w">พื้นที่</span>​<span class="w">ลาดชัน</span> <span class="w">เข้าถึง</span>​<span class="w">ยาก</span></b><span class="w">ปู</span>​<span class="w">หญ้า</span>​<span class="w">แผ่น</span>​<span class="w">บน</span>​<span class="w">เนิน</span>​<span class="w">ใช้เวลานาน</span> <span class="w">แรงงาน</span>​<span class="w">เยอะ</span> <span class="w">และ</span>​<span class="w">หญ้า</span>​<span class="w">มัก</span>​<span class="w">ไหล</span>​<span class="w">ลง</span>​<span class="w">ตอน</span>​<span class="w">ฝนตก</span></div>
+          <div class="sol"><span class="tag s">OASEED</span><h3><span class="w">สูตร</span> Slope Shield</h3><p><span class="w">สาร</span>​<span class="w">ยึด</span>​<span class="w">เกาะ</span>​<span class="w">แรง</span>​<span class="w">สูง</span>​<span class="w">และ</span>​<span class="w">ใย</span>​<span class="w">คลุม</span>​<span class="w">หน้า</span>​<span class="w">ดิน</span>​<span class="w">หนา</span>​<span class="w">พิเศษ</span> <span class="w">ช่วย</span>​<span class="w">ล็อก</span>​<span class="w">หน้า</span>​<span class="w">ดิน</span>​<span class="w">บน</span>​<span class="w">เนิน</span></p></div>
+        </article>
+        <article class="why-card">
+          <div class="prob"><span class="tag p"><span class="w">ปัญหา</span></span><b><span class="w">งบ</span>​<span class="w">บานปลาย</span> <span class="w">หญ้า</span>​<span class="w">ไม่</span>​<span class="w">รอด</span></b><span class="w">เสียเงิน</span>​<span class="w">และ</span>​<span class="w">เวลา</span>​<span class="w">ดูแล</span>​<span class="w">ซ้ำ</span> <span class="w">แต่</span>​<span class="w">หญ้า</span>​<span class="w">กลับ</span>​<span class="w">โต</span>​<span class="w">ไม่</span>​<span class="w">สม่ำเสมอ</span>​<span class="w">หรือ</span>​<span class="w">แห้ง</span>​<span class="w">ตาย</span></div>
+          <div class="sol"><span class="tag s">OASEED</span><h3><span class="w">หญ้า</span>​<span class="w">ขึ้น</span>​<span class="w">เรียบ</span>​<span class="w">สม่ำเสมอ</span></h3><p><span class="w">เคลือบ</span>​<span class="w">หน้า</span>​<span class="w">ดิน</span>​<span class="w">ทั่ว</span>​<span class="w">ทั้ง</span>​<span class="w">พื้นที่</span> <span class="w">ไม่</span>​<span class="w">มี</span>​<span class="w">รอยต่อ</span> <span class="w">พร้อม</span>​<span class="w">รับประกัน</span>​<span class="w">การ</span>​<span class="w">งอก</span> 30 <span class="w">วัน</span>​<span class="w">ใน</span>​<span class="w">แพ็กเกจ</span> Starter Lawn</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages" class="dark">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="w">แพ็กเกจ</span>​<span class="w">และ</span>​<span class="w">ราคา</span></h2>
+        <p><span class="w">ราคา</span>​<span class="w">ต่อ</span>​<span class="w">ตารางเมตร</span> <span class="w">เลือก</span>​<span class="w">ตาม</span>​<span class="w">ขนาด</span>​<span class="w">และ</span>​<span class="w">ลักษณะ</span>​<span class="w">พื้นที่</span></p>
+      </div>
+      <div class="pk-grid">
+        <article class="pk">
+          <h3>Starter Lawn</h3>
+          <span class="size"><span class="w">พื้นที่</span> 150–400 <span class="w">ตร.</span>​<span class="w">ม.</span></span>
+          <div class="price"><span class="num" data-to="45">45</span> <small><span class="w">บาท</span> / <span class="w">ตร.</span>​<span class="w">ม.</span></small></div>
+          <ul>
+            <li><span class="w">เมล็ด</span>​<span class="w">หญ้า</span>​<span class="w">เกรด</span>​<span class="w">พรีเมียม</span></li>
+            <li><span class="w">ปุ๋ย</span>​<span class="w">เร่ง</span>​<span class="w">ราก</span> + Mulch <span class="w">คลุม</span>​<span class="w">ดิน</span></li>
+            <li><span class="w">รับประกัน</span>​<span class="w">การ</span>​<span class="w">งอก</span> 30 <span class="w">วัน</span></li>
+          </ul>
+          <p class="fit"><span class="w">เหมาะกับ</span>​<span class="w">หญ้า</span>​<span class="w">หน้า</span>​<span class="w">บ้านเดี่ยว</span> <span class="w">หรือ</span>​<span class="w">บ้าน</span>​<span class="w">บน</span>​<span class="w">ทำเล</span>​<span class="w">พื้นราบ</span></p>
+        </article>
+        <article class="pk feature">
+          <span class="badge"><span class="w">สำหรับ</span>​<span class="w">พื้นที่</span>​<span class="w">ลาดชัน</span></span>
+          <h3>Slope Shield</h3>
+          <span class="size"><span class="w">พื้นที่</span> 200–600 <span class="w">ตร.</span>​<span class="w">ม.</span></span>
+          <div class="price"><span class="num" data-to="55">55</span> <small><span class="w">บาท</span> / <span class="w">ตร.</span>​<span class="w">ม.</span></small></div>
+          <ul>
+            <li><span class="w">เพิ่ม</span>​<span class="w">สาร</span>​<span class="w">ยึด</span>​<span class="w">เกาะ</span>​<span class="w">แรง</span>​<span class="w">สูง</span></li>
+            <li><span class="w">ใย</span>​<span class="w">คลุม</span>​<span class="w">หน้า</span>​<span class="w">ดิน</span>​<span class="w">หนา</span>​<span class="w">พิเศษ</span></li>
+            <li><span class="w">ผสม</span>​<span class="w">เมล็ด</span>​<span class="w">หญ้า</span>​<span class="w">ราก</span>​<span class="w">ลึก</span> <span class="w">ยึด</span>​<span class="w">ติดกับ</span>​<span class="w">หน้า</span>​<span class="w">ดิน</span></li>
+          </ul>
+          <p class="fit"><span class="w">แก้ปัญหา</span>​<span class="w">เนิน</span>​<span class="w">ดิน</span>​<span class="w">ใน</span>​<span class="w">บ้าน</span> <span class="w">รีสอร์ท</span> <span class="w">คาเฟ่</span> <span class="w">หรือ</span>​<span class="w">พื้น</span>​<span class="w">ที่ดิน</span>​<span class="w">ลาดชัน</span></p>
+        </article>
+        <article class="pk">
+          <h3>Estate & Resort Pro</h3>
+          <span class="size"><span class="w">พื้นที่</span> 600 <span class="w">ตร.</span>​<span class="w">ม.</span> <span class="w">ขึ้นไป</span></span>
+          <div class="price"><span class="num" data-to="38">38</span> <small><span class="w">บาท</span> / <span class="w">ตร.</span>​<span class="w">ม.</span></small></div>
+          <ul>
+            <li><span class="w">ราคา</span>​<span class="w">เหมา</span>​<span class="w">สเกล</span>​<span class="w">ใหญ่</span></li>
+            <li><span class="w">เหมาะกับ</span>​<span class="w">พื้นที่</span>​<span class="w">กว้าง</span></li>
+            <li><span class="w">ใช้เวลา</span>​<span class="w">น้อย</span></li>
+          </ul>
+          <p class="fit"><span class="w">เหมาะกับ</span>​<span class="w">รีสอร์ท</span>​<span class="w">ขนาดใหญ่</span> <span class="w">หมู่</span>​<span class="w">บ้านจัดสรร</span> <span class="w">หรือ</span>​<span class="w">พื้นที่</span>​<span class="w">ลาน</span>​<span class="w">กว้าง</span></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="works">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="w">หน้า</span>​<span class="w">งาน</span>​<span class="w">ของ</span>​<span class="w">เรา</span></h2>
+        <p><span class="w">ทีม</span>​<span class="w">พ่น</span>​<span class="w">เคลื่อนที่</span>​<span class="w">เข้าถึง</span>​<span class="w">บ้านพัก</span> <span class="w">รีสอร์ท</span> <span class="w">เนินเขา</span> <span class="w">และ</span>​<span class="w">โครงการ</span>​<span class="w">หมู่</span>​<span class="w">บ้านจัดสรร</span></p>
+      </div>
+      <div class="works">
+        <figure><img src="assets/slope-wide.jpg" srcset="assets/slope-wide-m.jpg 900w, assets/slope-wide.jpg 1800w" sizes="(max-width:960px) 100vw, 50vw" alt="รถ OASEED พ่นหญ้าบนเนินเขาขนาดใหญ่" loading="lazy"><figcaption><span class="w">งาน</span>​<span class="w">เนิน</span>​<span class="w">ลาดชัน</span></figcaption></figure>
+        <figure><img src="assets/spray-home.jpg" alt="พนักงานพ่นหญ้าหน้าบ้านเดี่ยว" loading="lazy"><figcaption><span class="w">บ้านเดี่ยว</span></figcaption></figure>
+        <figure><img src="assets/spray-estate.jpg" alt="งานพ่นเนินดินในโครงการหมู่บ้านจัดสรร" loading="lazy"><figcaption><span class="w">หมู่</span>​<span class="w">บ้านจัดสรร</span></figcaption></figure>
+        <figure><img src="assets/aerial-resort.jpg" alt="ภาพมุมสูงรีสอร์ทบนเนินเขา" loading="lazy"><figcaption><span class="w">รีสอร์ท</span>​<span class="w">บน</span>​<span class="w">เนินเขา</span></figcaption></figure>
+              </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="row"><span class="f">เนินชันแค่ไหน ก็เขียวได้</span><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#5FC3A8" stroke-width="1.6" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/></svg><span>Hydroseeding</span><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#5FC3A8" stroke-width="1.6" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/></svg><span class="f">พ่นเสร็จในรอบเดียว</span><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#5FC3A8" stroke-width="1.6" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/></svg><span>Eco-Mulch</span><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#5FC3A8" stroke-width="1.6" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/></svg><span class="f">เนินชันแค่ไหน ก็เขียวได้</span><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#5FC3A8" stroke-width="1.6" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/></svg><span>Hydroseeding</span><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#5FC3A8" stroke-width="1.6" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/></svg><span class="f">พ่นเสร็จในรอบเดียว</span><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#5FC3A8" stroke-width="1.6" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/></svg><span>Eco-Mulch</span><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#5FC3A8" stroke-width="1.6" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/></svg><span class="f">เนินชันแค่ไหน ก็เขียวได้</span><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#5FC3A8" stroke-width="1.6" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/></svg><span>Hydroseeding</span><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#5FC3A8" stroke-width="1.6" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/></svg><span class="f">พ่นเสร็จในรอบเดียว</span><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#5FC3A8" stroke-width="1.6" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/></svg><span>Eco-Mulch</span><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#5FC3A8" stroke-width="1.6" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/></svg></div></div>
+
+  <section class="promo" aria-label="โปรโมชัน">
+    <div class="wrap">
+      <h2><span class="w">จอง</span>​<span class="w">ก่อน</span> <span class="w">รับ</span>​<span class="w">ส่วนลด</span></h2>
+      <div><h3>Early Bird <span class="w">ลด</span> 10%</h3><p><span class="w">สำหรับ</span>​<span class="w">โครงการ</span>​<span class="w">บ้านจัดสรร</span>​<span class="w">หรือ</span>​<span class="w">รีสอร์ท</span>​<span class="w">ที่</span>​<span class="w">จอง</span>​<span class="w">คิว</span>​<span class="w">พ่น</span>​<span class="w">ล่วงหน้า</span></p></div>
+      <div><h3>Partner Referral</h3><p><span class="w">ส่วนลด</span>​<span class="w">แนะนำ</span>​<span class="w">สำหรับ</span>​<span class="w">ผู้รับเหมา</span>​<span class="w">จัด</span>​<span class="w">สวน</span>​<span class="w">หรือ</span>​<span class="w">สถาปนิก</span>​<span class="w">ที่</span>​<span class="w">ชวน</span> OASEED <span class="w">เข้า</span>​<span class="w">ร่วมงาน</span></p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="dark">
+    <div class="wrap contact">
+      <div>
+        <h2><span class="w">ส่ง</span>​<span class="w">รูปหน้า</span>​<span class="w">งาน</span> <span class="w">แล้ว</span>​<span class="w">เรา</span>​<span class="w">ประเมินราคา</span>​<span class="w">ให้</span></h2>
+        <p class="lead-p"><span class="w">แนบ</span>​<span class="w">รูป</span>​<span class="w">พื้น</span>​<span class="w">ที่จริง</span>​<span class="w">พร้อม</span>​<span class="w">ขนาด</span>​<span class="w">โดยประมาณ</span> <span class="w">ทีมงาน</span>​<span class="w">จะ</span>​<span class="w">ประเมินราคา</span>​<span class="w">เบื้องต้น</span>​<span class="w">และ</span>​<span class="w">ติดต่อ</span>​<span class="w">กลับ</span></p>
+        <div class="c-list">
+          <div><span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8CC63F" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#8CC63F"/></svg></span><a href="https://www.instagram.com/oaseedagri" style="text-decoration:none">@OASEEDAGRI</a></div>
+          <div><span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8CC63F" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><span>www.oaseedagri.com</span></div>
+          <div><span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8CC63F" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><span>[​<span class="w">เบอร์โทรศัพท์]</span></span></div>
+          <div><span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8CC63F" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span>[​<span class="w">อีเมล]</span></span></div>
+        </div>
+        <div class="areas">
+          <h3><span class="w">พื้นที่</span>​<span class="w">ให้บริการ</span>​<span class="w">หลัก</span></h3>
+          <ul><li><span class="w">กรุงเทพฯ</span></li><li><span class="w">ปริมณฑล</span></li><li><span class="w">เขาใหญ่</span></li><li><span class="w">หัว</span>​<span class="w">หิน</span></li><li><span class="w">ภาค</span>​<span class="w">ตะวันออก</span></li></ul>
+        </div>
+      </div>
+
+      <form id="quote" novalidate>
+        <h3><span class="w">ขอ</span>​<span class="w">ประเมินราคา</span></h3>
+        <div class="f"><label for="name"><span class="w">ชื่อ</span></label><input id="name" name="name" autocomplete="name" required></div>
+        <div class="f"><label for="phone"><span class="w">เบอร์โทรศัพท์</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div class="f"><label for="email"><span class="w">อีเมล</span></label><input id="email" name="email" type="email" autocomplete="email"></div>
+        <div class="f"><label for="pkg"><span class="w">แพ็กเกจ</span>​<span class="w">ที่</span>​<span class="w">สนใจ</span></label>
+          <select id="pkg" name="pkg">
+            <option>ยังไม่แน่ใจ ช่วยแนะนำ</option>
+            <option>Starter Lawn (150–400 ตร.ม.)</option>
+            <option>Slope Shield (พื้นที่ลาดชัน)</option>
+            <option>Estate & Resort Pro (600 ตร.ม. ขึ้นไป)</option>
+          </select>
+        </div>
+        <div class="f"><label for="area"><span class="w">ขนาด</span>​<span class="w">พื้นที่</span>​<span class="w">โดยประมาณ</span> (​<span class="w">ตร.</span>​<span class="w">ม.)</span></label><input id="area" name="area" inputmode="numeric"></div>
+        <div class="f"><label for="loc"><span class="w">จังหวัด</span> / <span class="w">อำเภอ</span></label><input id="loc" name="loc"></div>
+        <div class="f full"><label for="photo"><span class="w">รูปถ่าย</span>​<span class="w">หน้า</span>​<span class="w">งาน</span></label><input id="photo" name="photo" type="file" accept="image/*" multiple><span class="hint"><span class="w">ถ่าย</span>​<span class="w">ให้</span>​<span class="w">เห็น</span>​<span class="w">ทั้ง</span>​<span class="w">พื้นที่</span> <span class="w">และ</span>​<span class="w">มุม</span>​<span class="w">ที่</span>​<span class="w">เห็น</span>​<span class="w">ความชัน</span>​<span class="w">ของ</span>​<span class="w">เนิน</span></span></div>
+        <div class="f full"><label for="msg"><span class="w">รายละเอียด</span>​<span class="w">เพิ่มเติม</span></label><textarea id="msg" name="msg"></textarea></div>
+        <p class="sent" id="sent" role="status"></p>
+        <button class="btn" type="submit"><span class="w">ส่ง</span>​<span class="w">คำขอ</span>​<span class="w">ประเมินราคา</span></button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<a class="btn btn-lime fab" href="#contact">ขอประเมินราคา</a>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo.png" alt="OASEED" width="386" height="168">
+    <nav aria-label="ลิงก์ท้ายเว็บ">
+      <a href="#about"><span class="w">เกี่ยวกับ</span>​<span class="w">เรา</span></a><a href="#packages"><span class="w">แพ็กเกจ</span>​<span class="w">และ</span>​<span class="w">ราคา</span></a><a href="#works"><span class="w">ผลงาน</span></a><a href="#contact"><span class="w">ติดต่อ</span></a>
+    </nav>
+    <span>© 2026 OASEED Seeding Co. Where Every Seed Finds Its Flow.</span>
+  </div>
+</footer>
+
+<script>
+
+  document.documentElement.classList.add('js');
+  const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $=(q,r=document)=>[...r.querySelectorAll(q)];
+  const tag=(sel,type,step=0,base=0)=>$(sel).forEach((el,i)=>{el.dataset.a=type;el.style.setProperty('--d',(base+i*step).toFixed(2)+'s')});
+  // hero: staggered on load
+  tag('.hero-kicker,.hero h1,.hero p.lead,.hero .actions,.hero-facts>div','up',.12,.1);
+  // about: text from left, photo curtain, points pop
+  tag('#about .sec-head','left');
+  tag('#about .point .ic','pop',.15,.2);
+  tag('#about .point>div','left',.15,.25);
+  // hydroseeding
+  tag('#hydroseeding h2,#hydroseeding .lead-p','up',.1);
+  tag('.mix div','pop',.1,.1);
+  tag('.steps li','left',.15);
+  tag('.ba','blur');
+  // why: cards flip up one after another
+  tag('#why .sec-head','up');
+  tag('.why-card','flip',.15);
+  // packages: sides slide in, middle pops
+  tag('#packages .sec-head','up');
+  $('.pk').forEach((el,i)=>{el.dataset.a=['left','pop','right'][i]||'up';el.style.setProperty('--d',(i===1?.25:.1)+'s')});
+  // works
+  tag('#works .sec-head','up');
+  $('.works figure,.about-img').forEach((el)=>{el.classList.add('curtain');if(el.closest('.works'))el.style.setProperty('--d',($('.works figure').indexOf(el)*.15)+'s')});
+  // promo + contact
+  tag('.promo h2','left'); tag('.promo .wrap>div','up',.12,.1);
+  tag('#contact .contact>div>h2,#contact .lead-p,.c-list>div,.areas','left',.08);
+  tag('form','right',0,.15);
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;t.classList.add('in');io.unobserve(t);
+    if(t.classList.contains('pk'))countUp(t.querySelector('.num'));}),{threshold:.18,rootMargin:'0px 0px -60px 0px'});
+  $('[data-a],.curtain').forEach(el=>io.observe(el));
+  requestAnimationFrame(()=>$('.hero [data-a]').forEach(el=>el.classList.add('in')));
+
+  function countUp(el){if(!el||RM)return;const to=+el.dataset.to,t0=performance.now(),dur=1100;
+    const f=t=>{const k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,3);el.textContent=Math.round(to*e);if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
+
+  // scroll-linked effects
+  const root=document.documentElement,hero=document.querySelector('.hero'),heroImg=hero.querySelector('img.bg'),heroWrap=hero.querySelector('.wrap'),
+        steps=document.querySelector('.steps'),stepLis=$('.steps li'),ba=document.querySelector('.ba img'),mq=document.querySelector('.marquee .row'),
+        mqBox=document.querySelector('.marquee'),bar=document.querySelector('.grow'),figs=$('.works figure');
+  let ticking=false;
+  function frame(){ticking=false;const y=scrollY,vh=innerHeight;
+    bar.style.setProperty('--p',(y/(root.scrollHeight-vh)).toFixed(4));
+    if(RM)return;
+    if(y<vh*1.2){const k=y/vh;heroImg.style.setProperty('--hy',(y*.35)+'px');heroImg.style.setProperty('--hs',(1.12-Math.min(k,1)*.07).toFixed(3));
+      heroWrap.style.setProperty('--ty',(y*-.18)+'px');heroWrap.style.setProperty('--to',Math.max(0,1-k*1.3).toFixed(3));}
+    const sr=steps.getBoundingClientRect();const sp=Math.min(1,Math.max(0,(vh*.75-sr.top)/sr.height));
+    steps.style.setProperty('--sp',sp.toFixed(3));
+    stepLis.forEach((li,i)=>li.classList.toggle('lit',sp>=i/(stepLis.length-1)-.02));
+    const br=ba.getBoundingClientRect();const bk=Math.min(1,Math.max(-1,(br.top+br.height/2-vh/2)/vh));
+    ba.style.setProperty('--br',(bk*-8).toFixed(2)+'deg');ba.style.setProperty('--bs',(1-Math.abs(bk)*.12).toFixed(3));
+    const mr=mqBox.getBoundingClientRect();if(mr.bottom>0&&mr.top<vh)mq.style.setProperty('--mx',((mr.top-vh)*.6)+'px');
+    if(innerWidth>960)figs.forEach(f=>{const r=f.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;f.querySelector('img').style.setProperty('--py',((r.top+r.height/2-vh/2)*-.08).toFixed(1)+'px')});
+  }
+  const fab=document.querySelector('.fab'),contact=document.getElementById('contact');
+  function fabUpd(){const cr=contact.getBoundingClientRect();fab.classList.toggle('hide',scrollY<innerHeight*.6||cr.top<innerHeight*.9)}
+  addEventListener('scroll',fabUpd,{passive:true});fabUpd();
+  addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(frame)}},{passive:true});
+  addEventListener('resize',frame);frame();
+  const nav=document.getElementById('nav'),mb=document.querySelector('.menu-btn');
+  mb.addEventListener('click',()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);mb.setAttribute('aria-label',o?'ปิดเมนู':'เปิดเมนู')});
+  nav.querySelectorAll('ul a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');mb.setAttribute('aria-expanded',false)}));
+  document.getElementById('quote').addEventListener('submit',e=>{
+    e.preventDefault();
+    const f=e.target,s=document.getElementById('sent');
+    if(!f.name.value.trim()||!f.phone.value.trim()){s.textContent='กรุณากรอกชื่อและเบอร์โทรศัพท์ เพื่อให้ทีมงานติดต่อกลับได้';s.style.background='#F6E3D3';s.classList.add('show');(f.name.value.trim()?f.phone:f.name).focus();return;}
+    s.style.background='';s.textContent='ส่งคำขอแล้ว ทีมงาน OASEED จะติดต่อกลับเพื่อแจ้งราคาเบื้องต้น';s.classList.add('show');f.reset();
+  });
+</script>
+</body>
+</html>
